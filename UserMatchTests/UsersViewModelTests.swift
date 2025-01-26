@@ -28,6 +28,14 @@ struct UsersViewModelTests {
         #expect(users[0].avatarUrl == "avatarUrl")
     }
     
+    @Test func nextPageTriggered() async throws {
+        await sut.getMatchingUsers()
+        #expect(sut.currentPage == 1)
+        await sut.fetchNextPage()
+        #expect(sut.users.count == 4)
+        #expect(sut.currentPage == 2)
+    }
+    
     @Test func noStreetNumber() async throws {
         mockNetworkManager.successDataObject = UsersResponse.mock2
         await sut.getMatchingUsers()
@@ -46,10 +54,10 @@ struct UsersViewModelTests {
     
     @Test func declineProfileAction() async throws {
         await sut.getMatchingUsers()
-        sut.declineProfile(userID: sut.users[0].id)
-        #expect(sut.users[0].preferenceStatus == .Declined)
+        sut.declineProfile(userID: sut.users[1].id)
+        #expect(sut.users[1].preferenceStatus == .Declined)
         await sut.getMatchingUsers()
-        #expect(sut.users[0].preferenceStatus == .Declined)
+        #expect(sut.users[1].preferenceStatus == .Declined)
     }
 
 }

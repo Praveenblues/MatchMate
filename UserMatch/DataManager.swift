@@ -43,29 +43,39 @@ class DataManager {
     static func getPreferenceStatus(for userID: String) -> PreferenceStatus? {
         let fetchRequest = NSFetchRequest<Preferences>(entityName: "Preferences")
         fetchRequest.predicate = NSPredicate(format: "userID == %@", userID)
-        guard let results = try? viewContext.fetch(fetchRequest) else {
-            return nil
-        }
-        guard let preference = results.first(where: {$0.userID == userID})?.preference,
-              let preferenceStatus = PreferenceStatus(rawValue: preference) else {
-            return nil
+        
+        var preferenceStatus: PreferenceStatus? = nil
+        viewContext.performAndWait {
+            guard let results = try? viewContext.fetch(fetchRequest) else {
+                return
+            }
+            guard let preference = results.first(where: {$0.userID == userID})?.preference,
+                  let preferenceStatusFromDB = PreferenceStatus(rawValue: preference) else {
+                return
+            }
+            preferenceStatus = preferenceStatusFromDB
         }
         return preferenceStatus
     }
     
-    static func setPreferenceStatus(userID: String, preferenceStatus: PreferenceStatus) throws {
+    static func setPreferenceStatus(userID: String, preferenceStatus: PreferenceStatus) async throws {
 //        throw URLError(.cancelled)
+        let privateMOC = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        privateMOC.parent = viewContext
+        
         let fetchRequest = NSFetchRequest<Preferences>(entityName: "Preferences")
         fetchRequest.predicate = NSPredicate(format: "userID == %@", userID)
-        let results = try viewContext.fetch(fetchRequest)
-        if !results.isEmpty {
-            results.first?.preference = preferenceStatus.rawValue
-        } else {
-            let newPreference = Preferences(context: viewContext)
-            newPreference.userID = userID
-            newPreference.preference = preferenceStatus.rawValue
+        try await viewContext.perform {
+            let results = try viewContext.fetch(fetchRequest)
+            if !results.isEmpty {
+                results.first?.preference = preferenceStatus.rawValue
+            } else {
+                let newPreference = Preferences(context: viewContext)
+                newPreference.userID = userID
+                newPreference.preference = preferenceStatus.rawValue
+            }
+            try viewContext.save()
         }
-        try viewContext.save()
     }
     
 }

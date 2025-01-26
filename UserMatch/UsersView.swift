@@ -14,25 +14,45 @@ struct UsersView: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.users) { user in
-                Card(user: user) { cardAction in
-                    switch cardAction {
-                    case .AcceptProfile:
-                        viewModel.acceptProfile(userID: user.id)
-                    case .DeclineProfile:
-                        viewModel.declineProfile(userID: user.id)
+            switch viewModel.screenState {
+            case .Loading:
+                ProgressView()
+            case .Data:
+                List {
+                    ForEach(viewModel.users, id: \.id) { user in
+                        Card(user: user) { cardAction in
+                            switch cardAction {
+                            case .AcceptProfile:
+                                viewModel.acceptProfile(userID: user.id)
+                            case .DeclineProfile:
+                                viewModel.declineProfile(userID: user.id)
+                            }
+                        }
+                        .padding([.vertical], 30)
+                        .padding([.horizontal], 30)
+                        
+                        .listRowSeparator(.hidden)
+                        .listRowInsets(EdgeInsets())
+                    }
+                    if viewModel.screenState == .Data {
+                        ProgressView()
+                            .frame(maxWidth: .infinity)
+                            .centerHorizontally()
+                            .onAppear {
+                                Task {
+                                    try? await Task.sleep(nanoseconds: 200_000_000)
+                                    await viewModel.fetchNextPage()
+                                }
+                            }
+                            .background {
+                                Color.red
+                            }
                     }
                 }
-                .padding([.vertical], 30)
-                .padding([.horizontal], 20)
-//                .centerHorizontally()
-                
-                .listRowSeparator(.hidden)
-                .listRowInsets(EdgeInsets())
+                .listStyle(.plain)
+                .alert(viewModel.errorMessage, isPresented: $viewModel.showError, actions: {
+                })
             }
-            .listStyle(.plain)
-            .alert(viewModel.errorMessage, isPresented: $viewModel.showError, actions: {
-            })
         }
         .task {
             await viewModel.getMatchingUsers()
@@ -46,6 +66,7 @@ enum CardAction {
 }
 
 struct Card: View {
+    var imageSize: CGFloat = 30
     var user: UserDataModel
     var action: ((CardAction) -> ())?
     
@@ -80,31 +101,31 @@ struct Card: View {
                     .frame(maxWidth: .infinity)
                     .background(preferenceStatus == .Accepted ? Color.teal.opacity(0.5) : Color.orange.opacity(0.5))
             } else {
-                HStack(spacing: 70) {
+                HStack(spacing: 60) {
                     Button {
                         action?(.AcceptProfile)
                     } label: {
                         Image(.tick).resizable()
-                            .frame(width: 40, height: 40)
+                            .frame(width: imageSize, height: imageSize)
                     }
                     .buttonStyle(.plain)
-                    .padding([.horizontal], 20)
-                    .padding([.vertical], 20)
+                    .padding([.horizontal], 15)
+                    .padding([.vertical], 15)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 40)
+                        RoundedRectangle(cornerRadius: 30)
                             .stroke(.teal.opacity(0.5), lineWidth: 5)
                     )
                     Button(action: {
                         action?(.DeclineProfile)
                     }, label: {
                         Image(.cross).resizable()
-                            .frame(width: 40, height: 40)
+                            .frame(width: imageSize, height: imageSize)
                     })
                     .buttonStyle(.plain)
-                    .padding([.horizontal], 20)
-                    .padding([.vertical], 20)
+                    .padding([.horizontal], 15)
+                    .padding([.vertical], 15)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 40)
+                        RoundedRectangle(cornerRadius: 30)
                             .stroke(.teal.opacity(0.5), lineWidth: 5)
                     )
                 }

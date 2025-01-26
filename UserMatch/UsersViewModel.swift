@@ -7,25 +7,33 @@
 
 import Foundation
 
+enum ScreenState {
+    case Loading
+    case Data
+}
+
 class UsersViewModel: ObservableObject {
     
     @Published var users: [UserDataModel] = []
     @Published var showError: Bool = false
+    var screenState: ScreenState = .Loading
     lazy var errorMessage = ""
+    var currentPage = 1
     
-    var usersDataProvider: UsersDataProviderProtocol
-//    var dataManager: DataManager
+    private var usersDataProvider: UsersDataProviderProtocol
     
     init(usersDataProvider: UsersDataProviderProtocol = UsersDataProvider()) {
         self.usersDataProvider = usersDataProvider
-//        self.dataManager = dataManager
     }
     
     func getMatchingUsers() async {
+        print("trigger getMatchingUsers, \(currentPage)")
         do {
-            let users = try await usersDataProvider.getMatchingUsers()
+            let users = try await usersDataProvider.getMatchingUsers(page: currentPage)
+            print("giot users \(users.first!.id)")
             await MainActor.run {
-                self.users = users
+                self.users.append(contentsOf: users)
+                self.screenState = .Data
             }
         } catch {
             print("ERROR: \(error)")
@@ -36,33 +44,44 @@ class UsersViewModel: ObservableObject {
             case .Unknown:
                 errorMessage = "Sorry, an error occurred"
             }
-            showError = true
+            await MainActor.run {
+                showError = true
+            }
         }
     }
     
     func acceptProfile(userID: String) {
-        do {
-            try DataManager.setPreferenceStatus(userID: userID, preferenceStatus: .Accepted)
-            if let index = users.firstIndex(where: {$0.id == userID}) {
-                users[index].preferenceStatus = .Accepted
+        Task {
+            do {
+                try await DataManager.setPreferenceStatus(userID: userID, preferenceStatus: .Accepted)
+                if let index = users.firstIndex(where: {$0.id == userID}) {
+                    users[index].preferenceStatus = .Accepted
+                }
+            } catch {
+                print("Error: \(error)")
+                errorMessage = "Sorry, an error occurred"
+                showError = true
             }
-        } catch {
-            print("Error: \(error)")
-            errorMessage = "Sorry, an error occurred"
-            showError = true
         }
     }
     
     func declineProfile(userID: String) {
-        do {
-            try DataManager.setPreferenceStatus(userID: userID, preferenceStatus: .Declined)
-            if let index = users.firstIndex(where: {$0.id == userID}) {
-                users[index].preferenceStatus = .Declined
+        Task {
+            do {
+                try await DataManager.setPreferenceStatus(userID: userID, preferenceStatus: .Declined)
+                if let index = users.firstIndex(where: {$0.id == userID}) {
+                    users[index].preferenceStatus = .Declined
+                }
+            } catch {
+                print("Error: \(error)")
+                errorMessage = "Sorry, an error occurred"
+                showError = true
             }
-        } catch {
-            print("Error: \(error)")
-            errorMessage = "Sorry, an error occurred"
-            showError = true
         }
+    }
+    
+    func fetchNextPage() async {
+        currentPage += 1
+        await getMatchingUsers()
     }
 }

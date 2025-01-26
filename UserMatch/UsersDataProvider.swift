@@ -13,7 +13,7 @@ enum UsersListError: Error {
 }
 
 protocol UsersDataProviderProtocol {
-    func getMatchingUsers() async throws -> [UserDataModel]
+    func getMatchingUsers(page: Int) async throws -> [UserDataModel]
 }
 
 class UsersDataProvider: UsersDataProviderProtocol {
@@ -23,9 +23,9 @@ class UsersDataProvider: UsersDataProviderProtocol {
         self.networkManager = networkManager
     }
     
-    func getMatchingUsers() async throws -> [UserDataModel] {
+    func getMatchingUsers(page: Int) async throws -> [UserDataModel] {
         // &seed=aa5695b99e2fb13c
-        guard let url = URL(string: "https://randomuser.me/api/?results=10&page=1") else {return []}
+        guard let url = URL(string: "https://randomuser.me/api/?results=10&page=\(page)") else {return []}
         do {
             let response = try await networkManager.getData(of: UsersResponse.self, urlRequest: URLRequest(url: url))
             return getMatchingUsersDataModels(domainModels: response.results)
