@@ -54,7 +54,7 @@ class DataManager {
     }
     
     static func setPreferenceStatus(userID: String, preferenceStatus: PreferenceStatus) throws {
-        throw URLError(.cancelled)
+//        throw URLError(.cancelled)
         let fetchRequest = NSFetchRequest<Preferences>(entityName: "Preferences")
         fetchRequest.predicate = NSPredicate(format: "userID == %@", userID)
         let results = try viewContext.fetch(fetchRequest)

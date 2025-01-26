@@ -42,11 +42,21 @@ class UsersDataProvider: UsersDataProviderProtocol {
         guard let domainModels = domainModels else { return [] }
         return domainModels.compactMap({ userDomainModel in
             guard let id = userDomainModel.login?.uuid else {return nil}
+            let name = [userDomainModel.name?.first, userDomainModel.name?.last].compactMap({$0}).joined(separator: " ")
+            var location = ""
+            if let streetNumber = userDomainModel.location?.street?.number {
+                location.append("\(streetNumber), ")
+            }
+            location += [userDomainModel.location?.street?.name,
+                            userDomainModel.location?.city,
+                            userDomainModel.location?.state,
+                            userDomainModel.location?.country]
+                .compactMap({$0}).joined(separator: ", ")
             let preferenceStatus = DataManager.getPreferenceStatus(for: id)
             return UserDataModel(id: id,
-                                 name: userDomainModel.name?.first ?? "",
+                                 name: name,
                                  avatarUrl: userDomainModel.picture?.medium,
-                                 location: userDomainModel.location?.country,
+                                 location: location,
                                  preferenceStatus: preferenceStatus)
         })
     }
