@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_UserMatchVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_UserMatchVersionString[];
+FOUNDATION_EXPORT double Pods_MatchMateTestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_MatchMateTestsVersionString[];
 

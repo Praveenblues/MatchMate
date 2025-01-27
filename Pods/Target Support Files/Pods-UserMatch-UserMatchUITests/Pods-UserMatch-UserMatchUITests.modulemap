@@ -1,6 +1,0 @@
-framework module Pods_UserMatch_UserMatchUITests {
-  umbrella header "Pods-UserMatch-UserMatchUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

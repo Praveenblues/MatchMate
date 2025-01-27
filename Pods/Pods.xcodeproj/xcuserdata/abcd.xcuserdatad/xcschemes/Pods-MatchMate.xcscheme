@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B84E63E72FDAE5280C81200B0982D5F"
-               BuildableName = "Pods_UserMatchTests.framework"
-               BlueprintName = "Pods-UserMatchTests"
+               BlueprintIdentifier = "EFC2B93A602C0F14178455E3D2D36DCC"
+               BuildableName = "Pods_MatchMate.framework"
+               BlueprintName = "Pods-MatchMate"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

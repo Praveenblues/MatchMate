@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		151D3337B979947B07EEDECC /* Pods_UserMatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E83C20EAA20E7D6E48E9F8C /* Pods_UserMatchTests.framework */; };
-		49112EE9D8D6EFEC7EC7DD1E /* Pods_UserMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7066ACDE168AE07F8B1F8080 /* Pods_UserMatch.framework */; };
-		4E50FD90017BFDF07DF2D923 /* Pods_UserMatch_UserMatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207A661F740DF7E0E7D30BDF /* Pods_UserMatch_UserMatchUITests.framework */; };
+		344285FDD91F310284639EC0 /* Pods_MatchMate_MatchMateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DFE2DBB1C6DF4B501EF21D /* Pods_MatchMate_MatchMateUITests.framework */; };
+		CDFE543CAA0286B4161CF0B1 /* Pods_MatchMateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CD79BE95FF6FBE51B648B9A /* Pods_MatchMateTests.framework */; };
+		D6554F6184C8261BC1659469 /* Pods_MatchMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6649F7940CCAFD767BF5D8F /* Pods_MatchMate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,32 +31,44 @@
 
 /* Begin PBXFileReference section */
 		1E6B3F402D856C6AB5F9867E /* Pods-UserMatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserMatch.release.xcconfig"; path = "Target Support Files/Pods-UserMatch/Pods-UserMatch.release.xcconfig"; sourceTree = "<group>"; };
-		207A661F740DF7E0E7D30BDF /* Pods_UserMatch_UserMatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserMatch_UserMatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E83C20EAA20E7D6E48E9F8C /* Pods_UserMatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserMatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2577028A127BC58BAA679D23 /* Pods-MatchMate-MatchMateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchMate-MatchMateUITests.release.xcconfig"; path = "Target Support Files/Pods-MatchMate-MatchMateUITests/Pods-MatchMate-MatchMateUITests.release.xcconfig"; sourceTree = "<group>"; };
+		25F90E287A59B32716A59CDD /* Pods-MatchMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchMate.debug.xcconfig"; path = "Target Support Files/Pods-MatchMate/Pods-MatchMate.debug.xcconfig"; sourceTree = "<group>"; };
+		43DFE2DBB1C6DF4B501EF21D /* Pods_MatchMate_MatchMateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatchMate_MatchMateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F08EEEB3BBBB713AD2012D9 /* Pods-MatchMateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchMateTests.debug.xcconfig"; path = "Target Support Files/Pods-MatchMateTests/Pods-MatchMateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		51D917798FFC043CE2AB80FF /* Pods-UserMatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserMatchTests.release.xcconfig"; path = "Target Support Files/Pods-UserMatchTests/Pods-UserMatchTests.release.xcconfig"; sourceTree = "<group>"; };
+		54BC9CFDE1712166A156518C /* Pods-MatchMateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchMateTests.release.xcconfig"; path = "Target Support Files/Pods-MatchMateTests/Pods-MatchMateTests.release.xcconfig"; sourceTree = "<group>"; };
 		5CD1023A8BA3F2C8DC099182 /* Pods-UserMatch-UserMatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserMatch-UserMatchUITests.release.xcconfig"; path = "Target Support Files/Pods-UserMatch-UserMatchUITests/Pods-UserMatch-UserMatchUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7066ACDE168AE07F8B1F8080 /* Pods_UserMatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserMatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CD79BE95FF6FBE51B648B9A /* Pods_MatchMateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatchMateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83A17F55090C91E25DBB6E96 /* Pods-MatchMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchMate.release.xcconfig"; path = "Target Support Files/Pods-MatchMate/Pods-MatchMate.release.xcconfig"; sourceTree = "<group>"; };
 		8D00E3257BA3708F5DEB343F /* Pods-UserMatch-UserMatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserMatch-UserMatchUITests.debug.xcconfig"; path = "Target Support Files/Pods-UserMatch-UserMatchUITests/Pods-UserMatch-UserMatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D3498D1821995DDA648E971 /* Pods-UserMatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserMatch.debug.xcconfig"; path = "Target Support Files/Pods-UserMatch/Pods-UserMatch.debug.xcconfig"; sourceTree = "<group>"; };
 		A93E84E82D43D73400837495 /* MatchMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93E84FD2D43D73700837495 /* MatchMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93E85072D43D73700837495 /* MatchMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6649F7940CCAFD767BF5D8F /* Pods_MatchMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatchMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C51207B59E29A02F156A2956 /* Pods-MatchMate-MatchMateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchMate-MatchMateUITests.debug.xcconfig"; path = "Target Support Files/Pods-MatchMate-MatchMateUITests/Pods-MatchMate-MatchMateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8EBE5A485C2F60BFDDA2BFD /* Pods-UserMatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserMatchTests.debug.xcconfig"; path = "Target Support Files/Pods-UserMatchTests/Pods-UserMatchTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A93E84EA2D43D73400837495 /* MatchMate */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = MatchMate;
 			sourceTree = "<group>";
 		};
 		A93E85002D43D73700837495 /* MatchMateTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = MatchMateTests;
 			sourceTree = "<group>";
 		};
 		A93E850A2D43D73700837495 /* MatchMateUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
 			path = MatchMateUITests;
 			sourceTree = "<group>";
 		};
@@ -67,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49112EE9D8D6EFEC7EC7DD1E /* Pods_UserMatch.framework in Frameworks */,
+				D6554F6184C8261BC1659469 /* Pods_MatchMate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				151D3337B979947B07EEDECC /* Pods_UserMatchTests.framework in Frameworks */,
+				CDFE543CAA0286B4161CF0B1 /* Pods_MatchMateTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E50FD90017BFDF07DF2D923 /* Pods_UserMatch_UserMatchUITests.framework in Frameworks */,
+				344285FDD91F310284639EC0 /* Pods_MatchMate_MatchMateUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,9 +105,9 @@
 		7A4B775AC5A1558AD0E0B156 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7066ACDE168AE07F8B1F8080 /* Pods_UserMatch.framework */,
-				207A661F740DF7E0E7D30BDF /* Pods_UserMatch_UserMatchUITests.framework */,
-				2E83C20EAA20E7D6E48E9F8C /* Pods_UserMatchTests.framework */,
+				B6649F7940CCAFD767BF5D8F /* Pods_MatchMate.framework */,
+				43DFE2DBB1C6DF4B501EF21D /* Pods_MatchMate_MatchMateUITests.framework */,
+				7CD79BE95FF6FBE51B648B9A /* Pods_MatchMateTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -131,6 +143,12 @@
 				5CD1023A8BA3F2C8DC099182 /* Pods-UserMatch-UserMatchUITests.release.xcconfig */,
 				E8EBE5A485C2F60BFDDA2BFD /* Pods-UserMatchTests.debug.xcconfig */,
 				51D917798FFC043CE2AB80FF /* Pods-UserMatchTests.release.xcconfig */,
+				25F90E287A59B32716A59CDD /* Pods-MatchMate.debug.xcconfig */,
+				83A17F55090C91E25DBB6E96 /* Pods-MatchMate.release.xcconfig */,
+				C51207B59E29A02F156A2956 /* Pods-MatchMate-MatchMateUITests.debug.xcconfig */,
+				2577028A127BC58BAA679D23 /* Pods-MatchMate-MatchMateUITests.release.xcconfig */,
+				4F08EEEB3BBBB713AD2012D9 /* Pods-MatchMateTests.debug.xcconfig */,
+				54BC9CFDE1712166A156518C /* Pods-MatchMateTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -280,15 +298,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UserMatch-UserMatchUITests/Pods-UserMatch-UserMatchUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MatchMate-MatchMateUITests/Pods-MatchMate-MatchMateUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UserMatch-UserMatchUITests/Pods-UserMatch-UserMatchUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MatchMate-MatchMateUITests/Pods-MatchMate-MatchMateUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UserMatch-UserMatchUITests/Pods-UserMatch-UserMatchUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MatchMate-MatchMateUITests/Pods-MatchMate-MatchMateUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		04BBC1E3F4A54FB6065836E6 /* [CP] Embed Pods Frameworks */ = {
@@ -297,15 +315,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UserMatch/Pods-UserMatch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MatchMate/Pods-MatchMate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-UserMatch/Pods-UserMatch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MatchMate/Pods-MatchMate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UserMatch/Pods-UserMatch-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MatchMate/Pods-MatchMate-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3BA20B15B2EC46AAEEC0CDF7 /* [CP] Check Pods Manifest.lock */ = {
@@ -323,7 +341,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-UserMatchTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MatchMateTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -345,7 +363,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-UserMatch-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MatchMate-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -367,7 +385,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-UserMatch-UserMatchUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MatchMate-MatchMateUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -535,7 +553,7 @@
 		};
 		A93E85122D43D73700837495 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D3498D1821995DDA648E971 /* Pods-UserMatch.debug.xcconfig */;
+			baseConfigurationReference = 25F90E287A59B32716A59CDD /* Pods-MatchMate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -565,7 +583,7 @@
 		};
 		A93E85132D43D73700837495 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E6B3F402D856C6AB5F9867E /* Pods-UserMatch.release.xcconfig */;
+			baseConfigurationReference = 83A17F55090C91E25DBB6E96 /* Pods-MatchMate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -595,7 +613,7 @@
 		};
 		A93E85152D43D73700837495 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8EBE5A485C2F60BFDDA2BFD /* Pods-UserMatchTests.debug.xcconfig */;
+			baseConfigurationReference = 4F08EEEB3BBBB713AD2012D9 /* Pods-MatchMateTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -615,7 +633,7 @@
 		};
 		A93E85162D43D73700837495 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51D917798FFC043CE2AB80FF /* Pods-UserMatchTests.release.xcconfig */;
+			baseConfigurationReference = 54BC9CFDE1712166A156518C /* Pods-MatchMateTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -635,7 +653,7 @@
 		};
 		A93E85182D43D73700837495 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D00E3257BA3708F5DEB343F /* Pods-UserMatch-UserMatchUITests.debug.xcconfig */;
+			baseConfigurationReference = C51207B59E29A02F156A2956 /* Pods-MatchMate-MatchMateUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -652,7 +670,7 @@
 		};
 		A93E85192D43D73700837495 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5CD1023A8BA3F2C8DC099182 /* Pods-UserMatch-UserMatchUITests.release.xcconfig */;
+			baseConfigurationReference = 2577028A127BC58BAA679D23 /* Pods-MatchMate-MatchMateUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
