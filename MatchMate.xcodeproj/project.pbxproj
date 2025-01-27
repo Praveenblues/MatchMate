@@ -38,26 +38,26 @@
 		7066ACDE168AE07F8B1F8080 /* Pods_UserMatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserMatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D00E3257BA3708F5DEB343F /* Pods-UserMatch-UserMatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserMatch-UserMatchUITests.debug.xcconfig"; path = "Target Support Files/Pods-UserMatch-UserMatchUITests/Pods-UserMatch-UserMatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D3498D1821995DDA648E971 /* Pods-UserMatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserMatch.debug.xcconfig"; path = "Target Support Files/Pods-UserMatch/Pods-UserMatch.debug.xcconfig"; sourceTree = "<group>"; };
-		A93E84E82D43D73400837495 /* UserMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A93E84FD2D43D73700837495 /* UserMatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserMatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A93E85072D43D73700837495 /* UserMatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserMatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A93E84E82D43D73400837495 /* MatchMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A93E84FD2D43D73700837495 /* MatchMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A93E85072D43D73700837495 /* MatchMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8EBE5A485C2F60BFDDA2BFD /* Pods-UserMatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserMatchTests.debug.xcconfig"; path = "Target Support Files/Pods-UserMatchTests/Pods-UserMatchTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A93E84EA2D43D73400837495 /* UserMatch */ = {
+		A93E84EA2D43D73400837495 /* MatchMate */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = UserMatch;
+			path = MatchMate;
 			sourceTree = "<group>";
 		};
-		A93E85002D43D73700837495 /* UserMatchTests */ = {
+		A93E85002D43D73700837495 /* MatchMateTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = UserMatchTests;
+			path = MatchMateTests;
 			sourceTree = "<group>";
 		};
-		A93E850A2D43D73700837495 /* UserMatchUITests */ = {
+		A93E850A2D43D73700837495 /* MatchMateUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = UserMatchUITests;
+			path = MatchMateUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -103,9 +103,9 @@
 		A93E84DF2D43D73400837495 = {
 			isa = PBXGroup;
 			children = (
-				A93E84EA2D43D73400837495 /* UserMatch */,
-				A93E85002D43D73700837495 /* UserMatchTests */,
-				A93E850A2D43D73700837495 /* UserMatchUITests */,
+				A93E84EA2D43D73400837495 /* MatchMate */,
+				A93E85002D43D73700837495 /* MatchMateTests */,
+				A93E850A2D43D73700837495 /* MatchMateUITests */,
 				A93E84E92D43D73400837495 /* Products */,
 				D7E5D3F57334ED1B6FA95479 /* Pods */,
 				7A4B775AC5A1558AD0E0B156 /* Frameworks */,
@@ -115,9 +115,9 @@
 		A93E84E92D43D73400837495 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A93E84E82D43D73400837495 /* UserMatch.app */,
-				A93E84FD2D43D73700837495 /* UserMatchTests.xctest */,
-				A93E85072D43D73700837495 /* UserMatchUITests.xctest */,
+				A93E84E82D43D73400837495 /* MatchMate.app */,
+				A93E84FD2D43D73700837495 /* MatchMateTests.xctest */,
+				A93E85072D43D73700837495 /* MatchMateUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,9 +138,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A93E84E72D43D73400837495 /* UserMatch */ = {
+		A93E84E72D43D73400837495 /* MatchMate */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A93E85112D43D73700837495 /* Build configuration list for PBXNativeTarget "UserMatch" */;
+			buildConfigurationList = A93E85112D43D73700837495 /* Build configuration list for PBXNativeTarget "MatchMate" */;
 			buildPhases = (
 				7CEFF4191256B859165A2B7A /* [CP] Check Pods Manifest.lock */,
 				A93E84E42D43D73400837495 /* Sources */,
@@ -153,16 +153,16 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A93E84EA2D43D73400837495 /* UserMatch */,
+				A93E84EA2D43D73400837495 /* MatchMate */,
 			);
-			name = UserMatch;
+			name = MatchMate;
 			productName = UserMatch;
-			productReference = A93E84E82D43D73400837495 /* UserMatch.app */;
+			productReference = A93E84E82D43D73400837495 /* MatchMate.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A93E84FC2D43D73700837495 /* UserMatchTests */ = {
+		A93E84FC2D43D73700837495 /* MatchMateTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A93E85142D43D73700837495 /* Build configuration list for PBXNativeTarget "UserMatchTests" */;
+			buildConfigurationList = A93E85142D43D73700837495 /* Build configuration list for PBXNativeTarget "MatchMateTests" */;
 			buildPhases = (
 				3BA20B15B2EC46AAEEC0CDF7 /* [CP] Check Pods Manifest.lock */,
 				A93E84F92D43D73700837495 /* Sources */,
@@ -175,16 +175,16 @@
 				A93E84FF2D43D73700837495 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				A93E85002D43D73700837495 /* UserMatchTests */,
+				A93E85002D43D73700837495 /* MatchMateTests */,
 			);
-			name = UserMatchTests;
+			name = MatchMateTests;
 			productName = UserMatchTests;
-			productReference = A93E84FD2D43D73700837495 /* UserMatchTests.xctest */;
+			productReference = A93E84FD2D43D73700837495 /* MatchMateTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A93E85062D43D73700837495 /* UserMatchUITests */ = {
+		A93E85062D43D73700837495 /* MatchMateUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A93E85172D43D73700837495 /* Build configuration list for PBXNativeTarget "UserMatchUITests" */;
+			buildConfigurationList = A93E85172D43D73700837495 /* Build configuration list for PBXNativeTarget "MatchMateUITests" */;
 			buildPhases = (
 				D65845722E076BF7771A2CEF /* [CP] Check Pods Manifest.lock */,
 				A93E85032D43D73700837495 /* Sources */,
@@ -198,11 +198,11 @@
 				A93E85092D43D73700837495 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				A93E850A2D43D73700837495 /* UserMatchUITests */,
+				A93E850A2D43D73700837495 /* MatchMateUITests */,
 			);
-			name = UserMatchUITests;
+			name = MatchMateUITests;
 			productName = UserMatchUITests;
-			productReference = A93E85072D43D73700837495 /* UserMatchUITests.xctest */;
+			productReference = A93E85072D43D73700837495 /* MatchMateUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -228,7 +228,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A93E84E32D43D73400837495 /* Build configuration list for PBXProject "UserMatch" */;
+			buildConfigurationList = A93E84E32D43D73400837495 /* Build configuration list for PBXProject "MatchMate" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -242,9 +242,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A93E84E72D43D73400837495 /* UserMatch */,
-				A93E84FC2D43D73700837495 /* UserMatchTests */,
-				A93E85062D43D73700837495 /* UserMatchUITests */,
+				A93E84E72D43D73400837495 /* MatchMate */,
+				A93E84FC2D43D73700837495 /* MatchMateTests */,
+				A93E85062D43D73700837495 /* MatchMateUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -403,12 +403,12 @@
 /* Begin PBXTargetDependency section */
 		A93E84FF2D43D73700837495 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A93E84E72D43D73400837495 /* UserMatch */;
+			target = A93E84E72D43D73400837495 /* MatchMate */;
 			targetProxy = A93E84FE2D43D73700837495 /* PBXContainerItemProxy */;
 		};
 		A93E85092D43D73700837495 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A93E84E72D43D73400837495 /* UserMatch */;
+			target = A93E84E72D43D73400837495 /* MatchMate */;
 			targetProxy = A93E85082D43D73700837495 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -541,7 +541,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"UserMatch/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MatchMate/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -571,7 +571,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"UserMatch/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MatchMate/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -609,7 +609,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UserMatch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UserMatch";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MatchMate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MatchMate";
 			};
 			name = Debug;
 		};
@@ -629,7 +629,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UserMatch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/UserMatch";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MatchMate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MatchMate";
 			};
 			name = Release;
 		};
@@ -670,7 +670,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A93E84E32D43D73400837495 /* Build configuration list for PBXProject "UserMatch" */ = {
+		A93E84E32D43D73400837495 /* Build configuration list for PBXProject "MatchMate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A93E850F2D43D73700837495 /* Debug */,
@@ -679,7 +679,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A93E85112D43D73700837495 /* Build configuration list for PBXNativeTarget "UserMatch" */ = {
+		A93E85112D43D73700837495 /* Build configuration list for PBXNativeTarget "MatchMate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A93E85122D43D73700837495 /* Debug */,
@@ -688,7 +688,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A93E85142D43D73700837495 /* Build configuration list for PBXNativeTarget "UserMatchTests" */ = {
+		A93E85142D43D73700837495 /* Build configuration list for PBXNativeTarget "MatchMateTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A93E85152D43D73700837495 /* Debug */,
@@ -697,7 +697,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A93E85172D43D73700837495 /* Build configuration list for PBXNativeTarget "UserMatchUITests" */ = {
+		A93E85172D43D73700837495 /* Build configuration list for PBXNativeTarget "MatchMateUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A93E85182D43D73700837495 /* Debug */,

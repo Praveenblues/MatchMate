@@ -17,43 +17,50 @@ struct UsersView: View {
             switch viewModel.screenState {
             case .Loading:
                 ProgressView()
+                    .navigationTitle("Profile Matches")
             case .Data:
-                List {
-                    ForEach(viewModel.users, id: \.id) { user in
-                        Card(user: user) { cardAction in
-                            switch cardAction {
-                            case .AcceptProfile:
-                                viewModel.acceptProfile(userID: user.id)
-                            case .DeclineProfile:
-                                viewModel.declineProfile(userID: user.id)
-                            }
-                        }
-                        .padding([.vertical], 30)
-                        .padding([.horizontal], 30)
-                        
-                        .listRowSeparator(.hidden)
-                        .listRowInsets(EdgeInsets())
-                    }
-                    HStack(alignment: .center, spacing: 10) {
-                        Spacer()
-                        ProgressView()
-                        Spacer()
-                    }
-                    .onAppear {
-                        Task {
-                            try? await Task.sleep(nanoseconds: 500_000_000)
-                            await viewModel.fetchNextPage()
-                        }
-                    }
-                }
-                .listStyle(.plain)
-                .alert(viewModel.errorMessage, isPresented: $viewModel.showError, actions: {
-                })
+                usersListView()
+                    .navigationTitle("Profile Matches")
             }
         }
         .task {
             await viewModel.getMatchingUsers()
         }
+    }
+    
+    @ViewBuilder
+    func usersListView() -> some View {
+        List {
+            ForEach(viewModel.users, id: \.id) { user in
+                Card(user: user) { cardAction in
+                    switch cardAction {
+                    case .AcceptProfile:
+                        viewModel.acceptProfile(userID: user.id)
+                    case .DeclineProfile:
+                        viewModel.declineProfile(userID: user.id)
+                    }
+                }
+                .padding([.vertical], 30)
+                .padding([.horizontal], 30)
+                
+                .listRowSeparator(.hidden)
+                .listRowInsets(EdgeInsets())
+            }
+            HStack(alignment: .center, spacing: 10) {
+                Spacer()
+                ProgressView()
+                Spacer()
+            }
+            .onAppear {
+                Task {
+                    try? await Task.sleep(nanoseconds: 500_000_000)
+                    await viewModel.fetchNextPage()
+                }
+            }
+        }
+        .listStyle(.plain)
+        .alert(viewModel.errorMessage, isPresented: $viewModel.showError, actions: {
+        })
     }
 }
 
@@ -109,9 +116,11 @@ struct Card: View {
                             .foregroundColor(.gray)
                             .frame(width: imageSize, height: imageSize)
                     }
+                    .clipShape(Circle())
                     .buttonStyle(.plain)
                     .padding([.horizontal], 15)
                     .padding([.vertical], 15)
+                    .background(Color.gray.opacity(0.1).cornerRadius(55/2))
                     .overlay(
                         RoundedRectangle(cornerRadius: 55/2)
                             .stroke(.teal.opacity(0.5), lineWidth: 2)
@@ -127,6 +136,7 @@ struct Card: View {
                     .buttonStyle(.plain)
                     .padding([.horizontal], 15)
                     .padding([.vertical], 15)
+                    .background(Color.gray.opacity(0.1).cornerRadius(55/2))
                     .overlay(
                         RoundedRectangle(cornerRadius: 55/2)
                             .stroke(.teal.opacity(0.5), lineWidth: 2)
