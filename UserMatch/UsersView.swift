@@ -34,19 +34,16 @@ struct UsersView: View {
                         .listRowSeparator(.hidden)
                         .listRowInsets(EdgeInsets())
                     }
-                    if viewModel.screenState == .Data {
+                    HStack(alignment: .center, spacing: 10) {
+                        Spacer()
                         ProgressView()
-                            .frame(maxWidth: .infinity)
-                            .centerHorizontally()
-                            .onAppear {
-                                Task {
-                                    try? await Task.sleep(nanoseconds: 200_000_000)
-                                    await viewModel.fetchNextPage()
-                                }
-                            }
-                            .background {
-                                Color.red
-                            }
+                        Spacer()
+                    }
+                    .onAppear {
+                        Task {
+                            try? await Task.sleep(nanoseconds: 500_000_000)
+                            await viewModel.fetchNextPage()
+                        }
                     }
                 }
                 .listStyle(.plain)
@@ -66,7 +63,7 @@ enum CardAction {
 }
 
 struct Card: View {
-    var imageSize: CGFloat = 30
+    var imageSize: CGFloat = 25
     var user: UserDataModel
     var action: ((CardAction) -> ())?
     
@@ -79,7 +76,7 @@ struct Card: View {
         VStack(spacing: 10) {
             if let imageUrl = user.avatarUrl {
                 WebImage(url: URL(string: imageUrl)) { image in
-                        image.resizable() // Control layout like SwiftUI.AsyncImage, you must use this modifier or the view will use the image bitmap size
+                        image.resizable()
                     } placeholder: {
                             Rectangle().foregroundColor(.gray)
                     }
@@ -97,6 +94,8 @@ struct Card: View {
                 .multilineTextAlignment(.center)
             if let preferenceStatus = user.preferenceStatus {
                 Text(preferenceStatus == .Accepted ? "Accepted" : "Declined")
+                    .foregroundStyle(Color.white)
+                    .font(.title3)
                     .frame(height: 50)
                     .frame(maxWidth: .infinity)
                     .background(preferenceStatus == .Accepted ? Color.teal.opacity(0.5) : Color.orange.opacity(0.5))
@@ -106,27 +105,31 @@ struct Card: View {
                         action?(.AcceptProfile)
                     } label: {
                         Image(.tick).resizable()
+                            .renderingMode(.template)
+                            .foregroundColor(.gray)
                             .frame(width: imageSize, height: imageSize)
                     }
                     .buttonStyle(.plain)
                     .padding([.horizontal], 15)
                     .padding([.vertical], 15)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 30)
-                            .stroke(.teal.opacity(0.5), lineWidth: 5)
+                        RoundedRectangle(cornerRadius: 55/2)
+                            .stroke(.teal.opacity(0.5), lineWidth: 2)
                     )
                     Button(action: {
                         action?(.DeclineProfile)
                     }, label: {
                         Image(.cross).resizable()
+                            .renderingMode(.template)
+                            .foregroundColor(.gray)
                             .frame(width: imageSize, height: imageSize)
                     })
                     .buttonStyle(.plain)
                     .padding([.horizontal], 15)
                     .padding([.vertical], 15)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 30)
-                            .stroke(.teal.opacity(0.5), lineWidth: 5)
+                        RoundedRectangle(cornerRadius: 55/2)
+                            .stroke(.teal.opacity(0.5), lineWidth: 2)
                     )
                 }
             }

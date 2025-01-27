@@ -28,6 +28,14 @@ struct UsersViewModelTests {
         #expect(users[0].avatarUrl == "avatarUrl")
     }
     
+    @Test func apiError() async throws {
+        mockNetworkManager.isError = true
+        await sut.getMatchingUsers()
+        let users = sut.users
+        #expect(users.count == 0)
+        #expect(sut.showError)
+    }
+    
     @Test func nextPageTriggered() async throws {
         await sut.getMatchingUsers()
         #expect(sut.currentPage == 1)

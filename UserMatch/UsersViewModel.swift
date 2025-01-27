@@ -55,7 +55,9 @@ class UsersViewModel: ObservableObject {
             do {
                 try await DataManager.setPreferenceStatus(userID: userID, preferenceStatus: .Accepted)
                 if let index = users.firstIndex(where: {$0.id == userID}) {
-                    users[index].preferenceStatus = .Accepted
+                    await MainActor.run {
+                        users[index].preferenceStatus = .Accepted
+                    }
                 }
             } catch {
                 print("Error: \(error)")
@@ -70,7 +72,9 @@ class UsersViewModel: ObservableObject {
             do {
                 try await DataManager.setPreferenceStatus(userID: userID, preferenceStatus: .Declined)
                 if let index = users.firstIndex(where: {$0.id == userID}) {
-                    users[index].preferenceStatus = .Declined
+                    await MainActor.run {
+                        users[index].preferenceStatus = .Declined
+                    }
                 }
             } catch {
                 print("Error: \(error)")
