@@ -6,7 +6,7 @@
 //
 
 import Testing
-@testable import UserMatch
+@testable import MatchMate
 
 struct UsersViewModelTests {
     

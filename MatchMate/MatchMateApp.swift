@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct UserMatchApp: App {
+struct MatchMateApp: App {
     var body: some Scene {
         WindowGroup {
             UsersView()

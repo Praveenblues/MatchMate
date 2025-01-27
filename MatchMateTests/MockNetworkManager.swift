@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@testable import UserMatch
+@testable import MatchMate
 
 class MockNetworkManager: NetworkManagerProtocol {
     var successDataObject: Decodable

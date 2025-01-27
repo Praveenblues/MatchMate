@@ -5,7 +5,7 @@
 //  Created by Praveen on 26/01/25.
 //
 
-@testable import UserMatch
+@testable import MatchMate
 
 extension UsersResponse {
     static let mock: UsersResponse = UsersResponse(results: [

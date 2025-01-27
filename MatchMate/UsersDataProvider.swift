@@ -24,7 +24,6 @@ class UsersDataProvider: UsersDataProviderProtocol {
     }
     
     func getMatchingUsers(page: Int) async throws -> [UserDataModel] {
-        // &seed=aa5695b99e2fb13c
         guard let url = URL(string: "https://randomuser.me/api/?results=10&page=\(page)") else {return []}
         do {
             let response = try await networkManager.getData(of: UsersResponse.self, urlRequest: URLRequest(url: url))

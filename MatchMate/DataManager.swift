@@ -11,14 +11,6 @@ class DataManager {
     
     static var viewContext = PersistenceController.shared.container.viewContext
     
-    init() {
-        print("Datamanager init")
-    }
-    
-    deinit {
-        print("Datamanager init")
-    }
-    
     static func getCachedResponse(for url: String) throws -> Data? {
         let fetchRequest = NSFetchRequest<UrlData>(entityName: "UrlData")
         fetchRequest.predicate = NSPredicate(format: "url == %@", url)
@@ -59,7 +51,6 @@ class DataManager {
     }
     
     static func setPreferenceStatus(userID: String, preferenceStatus: PreferenceStatus) async throws {
-//        throw URLError(.cancelled)
         let privateMOC = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         privateMOC.parent = viewContext
         

@@ -6,7 +6,7 @@ target 'MatchMate' do
   use_frameworks!
   pod 'SDWebImageSwiftUI'
 
-  # Pods for UserMatch
+  # Pods for MatchMate
 
   target 'MatchMateTests' do
     inherit! :search_paths

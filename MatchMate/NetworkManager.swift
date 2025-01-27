@@ -12,13 +12,7 @@ protocol NetworkManagerProtocol {
 }
 
 
-class NetworkManager: NetworkManagerProtocol {
-//    var dataManager: DataManager
-    
-//    init(dataManager: DataManager = DataManager()) {
-//        self.dataManager = dataManager
-//    }
-    
+class NetworkManager: NetworkManagerProtocol {    
     func getData<T>(of type: T.Type, urlRequest: URLRequest) async throws -> T where T : Decodable {
         let urlString = urlRequest.url?.absoluteString
         do {
