@@ -44,6 +44,7 @@ struct UserDataModel: Identifiable {
     var avatarUrl: String?
     var location: String?
     var preferenceStatus: PreferenceStatus?
+    var isSelected = false
 }
 enum PreferenceStatus: Int16 {
     case Accepted
